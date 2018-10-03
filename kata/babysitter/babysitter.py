@@ -1,2 +1,3 @@
-def hello_world():
-    return 'hello world'
+
+def calculate_total_for_period(hours, rate):
+    return 48;
