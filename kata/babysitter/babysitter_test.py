@@ -16,4 +16,8 @@ class BabysitterTests(unittest.TestCase):
         self.assertEqual(calculate_hours_for_period('0200', '0400'), 2)
         #only wanting whole hours, rounded up
         self.assertEqual(calculate_hours_for_period('0200', '0230'), 1)
+    def test_calculate_hours_before_midnight(self):
+        self.assertEqual(calculate_hours_for_period('1700', '2300'), 6)
+        #only wanting whole hours, rounded up
+        self.assertEqual(calculate_hours_for_period('1800', '1950'), 2)
 
