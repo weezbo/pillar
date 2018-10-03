@@ -7,5 +7,3 @@ def babysitter_pay_calc(start_time, end_time, bed_time = False):
         return "End time is out of bounds"
     else:
         return "Acceptable times"
-
-babysitter_pay_calc(17, 4)
