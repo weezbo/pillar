@@ -15,3 +15,7 @@ class BabysitterTests(unittest.TestCase):
         self.assertEqual(babysitter_pay_calc(-1, 4), "Start time is out of bounds")
         self.assertEqual(babysitter_pay_calc(17, 25), "End time is out of bounds")
         self.assertEqual(babysitter_pay_calc(17, -1), "End time is out of bounds")
+    def test_enforce_time_direction(self):
+        self.assertEqual(babysitter_pay_calc(19, 18), "End time must be later than start time")
+        #need to check after midnight, too
+        self.assertEqual(babysitter_pay_calc(3, 2), "End time must be later than start time")
