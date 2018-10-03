@@ -1,3 +1,3 @@
 
 def calculate_total_for_period(hours, rate):
-    return 48;
+    return hours*12;
