@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="59f5f920-d73b-46e4-9554-71ee57425239" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/babysitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/babysitter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babysitter_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/babysitter_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +30,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4196" />
+          <entry key="py" value="4379" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="4196" />
+          <entry key="Python" value="4379" />
         </counts>
       </usages-collector>
     </session>
@@ -46,10 +45,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/babysitter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="105" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <marker date="1538599750874" expanded="true" signature="64:460" ph="..." />
+                <marker date="1538599930422" expanded="true" signature="64:446" ph="..." />
+                <marker date="1538599930422" expanded="true" signature="472:477" ph="..." />
               </folding>
             </state>
           </provider>
@@ -241,6 +241,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="85" y="90" width="1281" height="665" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
@@ -280,10 +281,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/babysitter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="105" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
-            <marker date="1538599750874" expanded="true" signature="64:460" ph="..." />
+            <marker date="1538599930422" expanded="true" signature="64:446" ph="..." />
+            <marker date="1538599930422" expanded="true" signature="472:477" ph="..." />
           </folding>
         </state>
       </provider>
