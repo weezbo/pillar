@@ -10,3 +10,8 @@ class BabysitterTests(unittest.TestCase):
         self.assertEqual(babysitter_pay_calc(4, 4), "Start time is out of bounds")
     def test_enforce_maximum_end_time(self):
         self.assertEqual(babysitter_pay_calc(17, 5), "End time is out of bounds")
+    def test_enforce_clock_times(self):
+        self.assertEqual(babysitter_pay_calc(25, 4), "Start time is out of bounds")
+        self.assertEqual(babysitter_pay_calc(-1, 4), "Start time is out of bounds")
+        self.assertEqual(babysitter_pay_calc(17, 25), "End time is out of bounds")
+        self.assertEqual(babysitter_pay_calc(17, -1), "End time is out of bounds")
