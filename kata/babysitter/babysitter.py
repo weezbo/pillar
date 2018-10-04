@@ -10,6 +10,8 @@ def babysitter_pay_calc(start_time, end_time, bed_time = False):
         for i in range(times[0], times[1]):
             if i > 23:
                 total_pay += post_midnight_rate
+            elif times[2] and i >= times[2]:
+                total_pay += 8
             else:
                 total_pay += pre_midnight_rate
     return total_pay

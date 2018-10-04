@@ -28,3 +28,5 @@ class BabysitterTests(unittest.TestCase):
         self.assertEqual(babysitter_pay_calc(2, 4, 3), 2*16)
     def test_cross_midnight_rate_no_bedtime(self):
         self.assertEqual(babysitter_pay_calc(23, 2, False), (1*12) + (2*16))
+    def test_pre_midnight_rate_with_bedtime(self):
+        self.assertEqual(babysitter_pay_calc(17, 23, 19), (2 * 12) + (4*8))
