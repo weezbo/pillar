@@ -1,5 +1,8 @@
 import unittest
 from babysitter import *
+pre_bed = 12
+post_bed = 8
+post_mid = 16
 class BabysitterTests(unittest.TestCase):
     def test_enforce_minimum_time(self):
         self.assertEqual(babysitter_pay_calc(12, 4), "Start time is out of bounds")
@@ -23,10 +26,15 @@ class BabysitterTests(unittest.TestCase):
         self.assertEqual(babysitter_pay_calc(3, 4, 25), "Bed time is out of bounds")
         self.assertEqual(babysitter_pay_calc(3, 4, -1), "Bed time is out of bounds")
     def test_pre_midnight_rate_no_bedtime(self):
-        self.assertEqual(babysitter_pay_calc(17, 20, False), 3*12)
+        self.assertEqual(babysitter_pay_calc(17, 20, False), 3*pre_bed)
     def test_post_midnight_rate(self):
-        self.assertEqual(babysitter_pay_calc(2, 4, 3), 2*16)
+        self.assertEqual(babysitter_pay_calc(2, 4, 3), 2*post_mid)
     def test_cross_midnight_rate_no_bedtime(self):
-        self.assertEqual(babysitter_pay_calc(23, 2, False), (1*12) + (2*16))
+        self.assertEqual(babysitter_pay_calc(23, 2, False), (1*pre_bed) + (2*post_mid))
     def test_pre_midnight_rate_with_bedtime(self):
-        self.assertEqual(babysitter_pay_calc(17, 23, 19), (2 * 12) + (4*8))
+        self.assertEqual(babysitter_pay_calc(17, 23, 19), (2*pre_bed) + (4*post_bed))
+    def test_cross_midnight_rate_with_bedtime(self):
+        self.assertEqual(babysitter_pay_calc(17, 4, 19), (2*pre_bed) + (5*post_bed) + (4*post_mid))
+    def test_ends_at_midnight_with_bedtime(self):
+        self.assertEqual(babysitter_pay_calc(17, 0, 19), (2*pre_bed) + (5*post_bed))
+        self.assertEqual(babysitter_pay_calc(17, 24, 19), (2*pre_bed) + (5*post_bed))

@@ -23,9 +23,10 @@ def real_time(candidate):
         return True
 
 def midnight_converter(hour):
-    if hour and hour < 5:
+    if hour is False or hour > 5:
+        return hour
+    else:
         return hour + 24
-    return hour
 
 
 def time_enforcer(start_time, end_time, bed_time = False):
@@ -40,9 +41,8 @@ def time_enforcer(start_time, end_time, bed_time = False):
     start_time = midnight_converter(start_time)
     end_time = midnight_converter(end_time)
     bed_time = midnight_converter(bed_time)
-
+    print(end_time)
 
     if end_time < start_time:
         raise Exception("End time must be later than start time")
     return start_time, end_time, bed_time
-
