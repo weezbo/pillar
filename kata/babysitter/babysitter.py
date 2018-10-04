@@ -1,19 +1,19 @@
 def babysitter_pay_calc(start_time, end_time, bed_time = False):
     pre_midnight_rate = 12
     post_midnight_rate = 16
+    post_bedtime_rate = 8
     total_pay = 0
     try:
         times = time_enforcer(start_time, end_time, bed_time)
     except Exception as e:
         return str(e)
-    if times:
-        for i in range(times[0], times[1]):
-            if i > 23:
-                total_pay += post_midnight_rate
-            elif times[2] and i >= times[2]:
-                total_pay += 8
-            else:
-                total_pay += pre_midnight_rate
+    for i in range(times[0], times[1]):
+        if i > 23:
+            total_pay += post_midnight_rate
+        elif times[2] and i >= times[2]:
+            total_pay += post_bedtime_rate
+        else:
+            total_pay += pre_midnight_rate
     return total_pay
 
 def real_time(candidate):
