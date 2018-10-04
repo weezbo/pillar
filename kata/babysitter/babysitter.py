@@ -1,5 +1,5 @@
 def babysitter_pay_calc(start_time, end_time, bed_time = False):
-    pre_midnight_rate = 12
+    pre_bedtime_rate = 12
     post_midnight_rate = 16
     post_bedtime_rate = 8
     total_pay = 0
@@ -13,7 +13,7 @@ def babysitter_pay_calc(start_time, end_time, bed_time = False):
         elif times[2] and i >= times[2]:
             total_pay += post_bedtime_rate
         else:
-            total_pay += pre_midnight_rate
+            total_pay += pre_bedtime_rate
     return total_pay
 
 def real_time(candidate):
@@ -41,7 +41,6 @@ def time_enforcer(start_time, end_time, bed_time = False):
     start_time = midnight_converter(start_time)
     end_time = midnight_converter(end_time)
     bed_time = midnight_converter(bed_time)
-
     if end_time <= start_time:
         raise Exception("End time must be later than start time")
     return start_time, end_time, bed_time
