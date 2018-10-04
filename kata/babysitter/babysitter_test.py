@@ -41,3 +41,5 @@ class BabysitterTests(unittest.TestCase):
     def test_cross_midnight_midnight_bedtime(self):
         self.assertEqual(babysitter_pay_calc(23, 2, 0), (1 * pre_bed) + (2 * post_mid))
         self.assertEqual(babysitter_pay_calc(23, 4, 24), (1 * pre_bed) + (4 * post_mid))
+    def test_equal_start_and_end_time(self):
+        self.assertEqual(babysitter_pay_calc(18,18,19), "End time must be later than start time")
