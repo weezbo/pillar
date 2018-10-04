@@ -27,7 +27,7 @@ If you would like to use the Babysitter class in a different project, it will ne
 and create a babysitter object with:
 `<object_name> = Babysitter()`
 
-From there, `Babysitter.calculatePay()` accepts two or three parameters, all integers: start time for shift, end time for shift, and bedtime. Bedtime is optional and will default to False if no bedtime is provided. `Babysitter.calculatePay()`  returns an integer value representing the total wage for the shift.
+From there, `Babysitter.calculate_pay()` accepts two or three parameters, all integers: start time for shift, end time for shift, and bedtime. Bedtime is optional and will default to False if no bedtime is provided. `Babysitter.calculate_pay()`  returns an integer value representing the total wage for the shift.
 
 
 ## A Commentary on Limitations and Suggestions for Future Improvement
