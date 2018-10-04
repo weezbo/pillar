@@ -18,7 +18,7 @@ This class was built in Python version 3.4.3 and uses standard libraries (unitte
 
 ## Installation/Running
 
-Once the repository is cloned to a directory, the unit tests can be run from command line in that directory with the command:
+Once the repository is cloned, the unit tests can be run from command line in the `kata/babysitter` directory with the command:
 
  `python3 -m unittest babysitter_test.py`
 
