@@ -1,10 +1,14 @@
 def babysitter_pay_calc(start_time, end_time, bed_time = False):
+    pre_midnight = 12
+    total_pay = 0
     try:
         times = time_enforcer(start_time, end_time, bed_time)
     except Exception as e:
         return str(e)
     if times:
-        return "Acceptable times"
+        for i in range(times[0], times[1]):
+            total_pay += pre_midnight
+    return total_pay
 
 def real_time(candidate):
     if candidate < 0 or candidate > 24:
@@ -12,21 +16,27 @@ def real_time(candidate):
     else:
         return True
 
-def time_enforcer(start_time, end_time, bed_time):
+def midnight_converter(hour):
+    if hour and hour < 5:
+        return hour + 24
+    return hour
+
+
+def time_enforcer(start_time, end_time, bed_time = False):
     minimum_start_time = 17
     maximum_end_time = 4
     if start_time in range(maximum_end_time, minimum_start_time) or not real_time(start_time):
         raise Exception("Start time is out of bounds")
-    elif end_time in range(maximum_end_time + 1, minimum_start_time + 1) or not real_time(end_time):
+    if end_time in range(maximum_end_time + 1, minimum_start_time + 1) or not real_time(end_time):
         raise Exception("End time is out of bounds")
+    if bed_time and not real_time(bed_time):
+        raise Exception("Bed time is out of bounds")
+    start_time = midnight_converter(start_time)
+    end_time = midnight_converter(end_time)
+    bed_time = midnight_converter(bed_time)
 
-    if end_time < 5:
-        end_time += 24
-    if start_time < 5:
-        start_time += 24
 
     if end_time < start_time:
         raise Exception("End time must be later than start time")
-    else:
-        return start_time, end_time, False
+    return start_time, end_time, bed_time
 
